@@ -3,14 +3,15 @@ MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 # make sure the package repository is up to date
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get -y upgrade
+RUN apt-get update && apt-get -y upgrade
 
 # Keep upstart from complaining
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initctl
 
 # Basic Requirements
+RUN apt-get -y install python-software-properties
+RUN add-apt-repository ppa:nginx/stable
 RUN apt-get -y install nginx php5-fpm php5-mysql php-apc pwgen python-setuptools unzip php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
 
 # nginx config
