@@ -78,6 +78,13 @@ alias did='docker ps -l -q'
 alias dip='docker inspect `did` | jq -r ".[0].NetworkSettings.IPAddress"'
 ```
 
+Suppression des containers éteints
 ```
 docker rm $(docker ps -a -q)
+```
+
+Suppression des images sans nom ou avec le nom coaxys
+```
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+docker rmi $(docker images | grep "^coaxys" | awk '{print $3}')
 ```
