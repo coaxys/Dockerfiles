@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM coaxys/oracle-jdk:latest
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 # make sure the package repository is up to date
@@ -8,15 +8,13 @@ RUN apt-get update && apt-get -y install python-software-properties
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update && apt-get -y upgrade
 
-# automatically accept oracle license
-RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-# and install java 7 oracle jdk
-RUN apt-get -y install wget oracle-java7-installer && apt-get clean
-RUN update-alternatives --display java
-RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/environment
-
-RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
+RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.7.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
 RUN rm -rf /tmp/*
+
+ADD elasticsearch.yml /opt/elasticsearch/config/elasticsearch.yml
+
+# Create the Elasticsearch data directory
+RUN mkdir -p /data/data && mkdir -p /data/logs && mkdir -p /data/work && mkdir -p /data/plugins
 
 EXPOSE 9200
 EXPOSE 9300
