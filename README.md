@@ -67,11 +67,17 @@ Utilitaires
 ===========
 
 (json cli parser : http://stedolan.github.io/jq/download/)
+```
 wget http://stedolan.github.io/jq/download/linux64/jq
 chmod +x ./jq
 sudo cp jq /usr/bin
+```
 
+```
 alias did='docker ps -l -q'
 alias dip='docker inspect `did` | jq -r ".[0].NetworkSettings.IPAddress"'
+```
 
+```
 docker rm $(docker ps -a -q)
+```
