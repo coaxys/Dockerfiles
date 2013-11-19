@@ -14,8 +14,8 @@ Utilisation du container comme client de notre Container Redis Server
 =======================================================================
 ```
 # On récupère l'adresse IP du container Redis Server lancé plus tôt
-IP_ADDRESS=$(sudo docker inspect $REDIS_ID | grep IPAddress | cut -d '"' -f4)
+IP_ADDRESS=$(docker inspect $REDIS_ID | grep IPAddress | cut -d '"' -f4)
 
 # On surcharge l'entrypoint par défaut du container par la commande "/redis/src/redis-cli"
-sudo docker run -i -t -entrypoint "/redis/src/redis-cli" coaxys/redis -h $IP_ADDRESS -a docker
+docker run -i -t -entrypoint "/redis/src/redis-cli" coaxys/redis -h $IP_ADDRESS -a docker
 ```
