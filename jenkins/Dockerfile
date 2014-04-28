@@ -7,6 +7,7 @@ RUN apt-get update
 
 # HACK: https://issues.jenkins-ci.org/browse/JENKINS-20407
 RUN mkdir /var/run/jenkins
+RUN chmod +x /usr/local/bin/run.sh
 
 RUN apt-get install -y jenkins=1.561
 ADD run.sh /usr/local/bin/
