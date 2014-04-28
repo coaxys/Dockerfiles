@@ -12,5 +12,11 @@ RUN apt-get install -y mongodb-org
 # Create the MongoDB data directory
 RUN mkdir -p /data/db
 
+# Define mountable directories.
+VOLUME ["/data"]
+
+# Define working directory.
+WORKDIR /data
+
 EXPOSE 27017
 ENTRYPOINT ["usr/bin/mongod"]
