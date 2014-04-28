@@ -3,7 +3,6 @@ MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN curl http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
 RUN echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
-
 RUN apt-get update
 
 # HACK: https://issues.jenkins-ci.org/browse/JENKINS-20407
