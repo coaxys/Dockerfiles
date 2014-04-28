@@ -1,4 +1,4 @@
-FROM coaxys/oracle-jdk:latest
+FROM coaxys/oracle-jdk-7:latest
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)

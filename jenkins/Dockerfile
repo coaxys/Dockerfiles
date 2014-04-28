@@ -1,9 +1,7 @@
-FROM coaxys/oracle-jdk:latest
+FROM coaxys/oracle-jdk-7:latest
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
-RUN apt-get install -y curl
 RUN curl http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
-RUN echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sources.list
 RUN echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
 
 RUN apt-get update
