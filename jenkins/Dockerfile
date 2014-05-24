@@ -1,4 +1,4 @@
-FROM coaxys/oracle-jdk-7:latest
+FROM coaxys/oracle-jdk-7:1.7.0_55
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN curl http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
@@ -7,10 +7,10 @@ RUN apt-get update
 
 # HACK: https://issues.jenkins-ci.org/browse/JENKINS-20407
 RUN mkdir /var/run/jenkins
-RUN chmod +x /usr/local/bin/run.sh
 
-RUN apt-get install -y jenkins=1.561
+RUN apt-get install -y git jenkins=1.564
 ADD run.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/run.sh
 
 VOLUME ["/var/lib/jenkins"]
 
