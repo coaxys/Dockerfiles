@@ -1,17 +1,21 @@
 FROM coaxys/ubuntu:latest
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
-RUN export DEBIAN_FRONTEND=noninteractive
-
 RUN apt-get update
 
-RUN apt-get -y install mysql-server
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server pwgen
 
-run sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+# Remove pre-installed database
+RUN rm -rf /var/lib/mysql/*
 
-ADD ./set-access-rights.sh /tmp/set-access-rights.sh
-RUN /bin/sh /tmp/set-access-rights.sh
+RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+
+ADD create_mysql_admin_user.sh /opt/create_mysql_admin_user.sh
+ADD run.sh /opt/run.sh
+RUN chmod 755 /opt/*.sh
+
+VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 EXPOSE 3306
 
-ENTRYPOINT ["/usr/sbin/mysqld"]
+ENTRYPOINT ["/opt/run.sh"]
