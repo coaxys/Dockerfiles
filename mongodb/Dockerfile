@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM coaxys/ubuntu:latest
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 # Add 10gen official apt source to the sources list

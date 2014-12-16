@@ -7,6 +7,11 @@ sudo docker build -t coaxys/play-127 .
 Utilisation du container
 ========================
 ```
+sudo docker run -it --rm coaxys/play-127
+
+```
+
+```
 # -v /var/docker/app:/app : utilise le répertoire /var/docker/app du serveur et le monte sur le répertoire /app du container
 # -p 9000:9000 : force l'utilisation du port 9000 du serveur et le bind sur le port 9000 du container
 # -d : background
