@@ -18,4 +18,4 @@ VOLUME ["/data"]
 WORKDIR /data
 
 EXPOSE 27017
-ENTRYPOINT ["usr/bin/mongod"]
+ENTRYPOINT ["/usr/bin/mongod"]
