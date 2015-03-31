@@ -11,8 +11,10 @@ RUN mkdir -p /data/data
 RUN mkdir -p /data/logs
 RUN mkdir -p /data/work 
 RUN mkdir -p /data/plugins
+RUN mkdir -p /config
 
 VOLUME ["/data"]
+VOLUME ["/config"]
 
 ENV PATH /opt/elasticsearch/bin:$PATH
 
