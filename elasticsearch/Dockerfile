@@ -1,7 +1,7 @@
-FROM coaxys/oracle-jdk-7:latest
+FROM coaxys/oracle-jdk-8:1.8.0_40
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
-RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.1.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
+RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.5.0.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
 RUN rm -rf /tmp/*
 
 ADD elasticsearch.yml /opt/elasticsearch/config/elasticsearch.yml
@@ -12,11 +12,10 @@ RUN mkdir -p /data/logs
 RUN mkdir -p /data/work 
 RUN mkdir -p /data/plugins
 
-# Define mountable directories.
 VOLUME ["/data"]
 
-EXPOSE 9200
-EXPOSE 9300
+ENV PATH /opt/elasticsearch/bin:$PATH
 
-CMD ["-f"]
-ENTRYPOINT ["/opt/elasticsearch/bin/elasticsearch"]
+EXPOSE 9200 9300
+
+CMD ["elasticsearch"]
