@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN apt-get update
