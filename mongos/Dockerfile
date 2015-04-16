@@ -1,4 +1,4 @@
-FROM coaxys/mongodb:3.0.1
+FROM coaxys/mongodb:3.0.2
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
  
 EXPOSE 27017

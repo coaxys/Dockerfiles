@@ -6,7 +6,7 @@ RUN echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiver
 
 # Install MongoDB
 RUN apt-get update
-RUN apt-get install -y mongodb-org=3.0.1
+RUN apt-get install -y mongodb-org=3.0.2
 
 # Create the MongoDB data directory
 RUN mkdir -p /data/db
