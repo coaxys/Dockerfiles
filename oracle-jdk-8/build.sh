@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t coaxys/oracle-jdk-8:1.8.0_40 .
+sudo docker build -t coaxys/oracle-jdk-8:1.8.0_45 .
