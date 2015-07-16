@@ -1,13 +1,13 @@
 Build du container
 ==================
 ```
-sudo docker build -t coaxys/elasticsearch:1.5.0 .
+sudo docker build -t coaxys/elasticsearch:1.6.0 .
 ```
 
 Utilisation du container
 ========================
 ```
-sudo docker run -v /path/to/data:/data -d coaxys/elasticsearch:1.5.0
+sudo docker run -v /path/to/data:/data -d coaxys/elasticsearch:1.6.0
 ```
 Le volume local peut contenir les répertoires suivants :
 - data

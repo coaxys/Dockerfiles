@@ -1,7 +1,7 @@
 FROM coaxys/oracle-jdk-8:1.8.0_45
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
-RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.5.1.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
+RUN (cd /tmp && wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.6.0.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
 RUN rm -rf /tmp/*
 
 ADD elasticsearch.yml /opt/elasticsearch/config/elasticsearch.yml
