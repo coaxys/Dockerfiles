@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t coaxys/mongos:3.0.4 .
+sudo docker build -t coaxys/mongos:3.0.6 .
