@@ -1,4 +1,4 @@
-FROM coaxys/oracle-jdk-8:1.8.0_45
+FROM coaxys/oracle-jdk-8:1.8.0_60
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN mkdir -p /opt/play && cd /opt/play
