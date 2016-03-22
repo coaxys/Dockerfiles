@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t coaxys/mongodb:3.2.1 .
+sudo docker build -t coaxys/mongodb:3.2.4 .
