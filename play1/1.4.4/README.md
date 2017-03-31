@@ -15,7 +15,7 @@ sudo docker run -it --rm coaxys/play1:1.4.4
 # -v /var/docker/app:/app : utilise le répertoire /var/docker/app du serveur et le monte sur le répertoire /app du container
 # -p 9000:9000 : force l'utilisation du port 9000 du serveur et le bind sur le port 9000 du container
 # -d : background
-PLAY_ID=$(sudo docker run -v /var/docker/app:/app -p 9000:9000 -d coaxys/play1:1.4.1 run /app --%prod)
+PLAY_ID=$(sudo docker run -v /var/docker/app:/app -p 9000:9000 -d coaxys/play1:1.4.4 run /app --%prod)
 
 sudo docker ps
 ID                  IMAGE                   COMMAND                CREATED              STATUS              PORTS
