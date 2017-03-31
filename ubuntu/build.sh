@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t coaxys/ubuntu:14.04 .
+sudo docker build -t coaxys/ubuntu:16.04 -t coaxys/ubuntu:latest .
