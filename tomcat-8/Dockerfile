@@ -1,10 +1,10 @@
-FROM coaxys/oracle-jdk-7:1.7.0_55
+FROM coaxys/oracle-jdk-8:1.8.0_91
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN apt-get update
 RUN apt-get install -y pwgen
 
-RUN wget http://mir2.ovh.net/ftp.apache.org/dist/tomcat/tomcat-8/v8.0.8/bin/apache-tomcat-8.0.8.tar.gz
+RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.8/bin/apache-tomcat-8.0.8.tar.gz 
 RUN tar -xzf apache-tomcat-8.0.8.tar.gz
 RUN rm apache-tomcat-8.0.8.tar.gz
 RUN mv apache-tomcat-8.0.8 /opt
