@@ -1,4 +1,4 @@
-FROM coaxys/oracle-jdk-8:1.8.0_60
+FROM coaxys/oracle-jdk-8:1.8.0_91
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN (cd /tmp && wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.1.tar.gz -O elasticsearch.tar.gz && tar -xzf elasticsearch.tar.gz && mv elasticsearch-* /opt/elasticsearch)
