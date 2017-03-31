@@ -1,4 +1,4 @@
-FROM coaxys/ubuntu:14.04
+FROM coaxys/ubuntu:16.04
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 RUN add-apt-repository ppa:nginx/stable
