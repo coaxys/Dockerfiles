@@ -18,5 +18,6 @@ ENV PLAY_HOME /opt/play/play-1.4.4
 
 EXPOSE 9000
 
-CMD ["help"]
 ENTRYPOINT ["/opt/play/play-1.4.4/play"]
+
+CMD ["run", "/app", "--deps"]
