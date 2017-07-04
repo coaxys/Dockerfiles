@@ -1,4 +1,4 @@
-FROM coaxys/oracle-jdk-8:1.8.0_91
+FROM coaxys/oracle-jdk-8:1.8.0_131
 MAINTAINER Nicolas Giard, nicolas.giard@coaxys.com
 
 # Create and move to play directory
